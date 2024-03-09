@@ -28,5 +28,5 @@ This project supports the following platforms:
 
 ## Additional Resources
 
-* Flutter Documentation
-* Flutter Installation Guide
+* [Flutter Documentation](https://docs.flutter.dev/)
+* [Flutter Installation Guide](https://docs.flutter.dev/get-started/install)
