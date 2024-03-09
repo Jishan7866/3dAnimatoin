@@ -98,6 +98,90 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text("%"))
                         ],
                       )
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.local_fire_department_outlined,color: Colors.red,),
+                        ),
+                        Expanded(child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("18,40"),
+                            Text("calories",
+                          style: TextStyle(fontSize: 12,color: Colors.grey),
+                            )
+                          ]
+                        ))
+                      ],
+                    ),
+                    SizedBox(height: 12,),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.do_not_step,color: Colors.purple,),
+                        ),
+                        Expanded(child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("34,80"),
+                              Text("steps",
+                                style: TextStyle(fontSize: 12,color: Colors.grey),
+                              )
+                            ]
+                        ))
+                      ],
+                    ),
+                    SizedBox(height: 12,),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.hourglass_bottom,color: Colors.lightBlueAccent,),
+                        ),
+                        Expanded(child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("6.5"),
+                              Text("hours",
+                                style: TextStyle(fontSize: 12,color: Colors.grey),
+                              )
+                            ]
+                        ))
+                      ],
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Text('Journal'),
+                      ),
+                    ),
+                    SizedBox(
+                        width: double.infinity,
+                        child: Row(
+                          children: [
+                            Transform.translate(
+                              offset: Offset (0,20),
+                              child: Text("<")),
+                            Expanded(
+                              child: FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: Text('87'),
+                              ),
+                            ),
+
+                          ],
+                        )
+                    ),
+                    Text("July 2024",
+                      style: TextStyle(fontSize: 12,color: Colors.grey),
                     )
                   ],
                 ),
@@ -107,51 +191,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: double.infinity,
                       child: FittedBox(
                         fit: BoxFit.fitWidth,
-                        child: Text('Daily goals'),
+                        child: Text('Profile'),
                       ),
                     ),
                     SizedBox(
                         width: double.infinity,
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text('87'),
-                              ),
-                            ),
-                            Transform.translate(
-                                offset: Offset (0,20),
-                                child: Text("%"))
-                          ],
-                        )
-                    )
-                  ],
-                ),
-                Column(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Text('Daily goals'),
-                      ),
+                        child: FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text('Dazy'),
+                        ),
+
                     ),
-                    SizedBox(
-                        width: double.infinity,
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text('87'),
-                              ),
-                            ),
-                            Transform.translate(
-                                offset: Offset (0,20),
-                                child: Text("%"))
-                          ],
-                        )
+                    Text("24 year old",
+                      style: TextStyle(fontSize: 12,color: Colors.grey),
                     )
                   ],
                 ),
@@ -165,6 +217,18 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: (page){
           mainPageController.animateToPage(page, duration: const Duration(milliseconds: 500), curve: Curves.ease);
           textPageController.animateToPage(page, duration: const Duration(milliseconds: 500), curve: Curves.ease);
+          if (page==0){
+            o3dController.cameraTarget(-0.25,1.5,1.5);
+            o3dController.cameraOrbit(0,90,1);
+          }
+          else if (page ==1){
+            o3dController.cameraTarget(0,1.8,0);
+            o3dController.cameraOrbit(-90,90,1.5);
+          }
+          else if (page==2){
+            o3dController.cameraTarget(0,3,0);
+            o3dController.cameraOrbit(0,90,-3);
+          }
           setState(() {
             this.page=page;
           });
