@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:o3d/o3d.dart';
 
+import 'inverted_circle_clipper.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -39,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue.shade50,
       body: Stack(
         children: [
           O3D(src: 'assets/disney_style_character.glb',
@@ -46,19 +49,26 @@ class _MyHomePageState extends State<MyHomePage> {
             ar: false,
             autoPlay: true,
             autoRotate: false,
+            cameraControls: false,
+            cameraTarget: CameraTarget(-0.25,1.5,1.5),
+            cameraOrbit: CameraOrbit(0,90,1),
           ),
           PageView(
             controller: mainPageController,
-            children: const [
-              Center(),
-              Center(),
-              Center()
+            children:  [
+              const Center(),
+              const Center(),
+              ClipPath(
+                clipper: InvertedCircleClipper() ,
+                child: Container(
+                  color: Colors.white,
+                ),
+              )
             ],
           ),
           Container(
             width: 100,
             height: double.infinity,
-            color: Colors.blue,
             margin: EdgeInsets.all(12),
             child: PageView(
               controller: textPageController,
