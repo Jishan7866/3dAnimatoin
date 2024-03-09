@@ -1,16 +1,32 @@
-# animation
+# Flutter Project Animation
 
-A new Flutter project.
+🚀 Welcome to our Flutter project! This README will guide you through the steps to clone the project, navigate to the folder, and run it on iOS, Android, and web platforms.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Clone the Project
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/Jishan7866/3dAnimatoin.git
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+## Navigate to the Project Folder
+```bash
+cd ./3dAnimatoin
+```
+## Run the Project
+```bash
+flutter run
+````
+## Platform Support
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project supports the following platforms:
+
+* iOS
+* Android
+* Web
+
+## Additional Resources
+
+* Flutter Documentation
+* Flutter Installation Guide
